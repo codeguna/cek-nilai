@@ -11,6 +11,24 @@
                 </a>
             </li>
             @can('users_manage')
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link  nav-dropdown-toggle" href="#">
+                    <i class="fa-fw fas fa-university nav-icon">
+
+                    </i>
+                    Nilai Mahasiswa
+                </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route("admin.students.index") }}" class="nav-link {{ request()->is('admin/students') || request()->is('admin/students/*') ? 'active' : '' }}">
+                            <i class="fa-fw fas fa-user nav-icon">
+
+                            </i>
+                            Manage Nilai Mahasiswa
+                        </a>
+                    </li>
+                </ul>
+            </li>
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
