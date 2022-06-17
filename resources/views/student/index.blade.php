@@ -33,9 +33,9 @@
                     @endif
                         @include('student.modal')
                     <div class="card-body">
-                        <form action="{{ route('admin.student.search') }}" method="GET">
+                        <form action="" method="GET">
                             @csrf
-                            <input type="text" class="form-control" name="cari" value="{{ old('cari') }}">
+                            <input type="text" class="form-control" name="cariNama" value="{{ old('cari') }}">
                         </form>
                         
                         <div class="table-responsive">
