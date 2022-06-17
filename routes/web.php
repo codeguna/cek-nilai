@@ -1,6 +1,6 @@
 <?php
 Route::redirect('/', 'admin/home');
-
+Route::get('/home/search','HomeController@search')->name('nilai.search');
 Auth::routes(['register' => false]);
 
 // Change Password Routes...

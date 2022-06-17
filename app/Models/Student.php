@@ -40,7 +40,7 @@ class Student extends Model
 		'nilaiHuruf' => 'required',
 		'keterangan' => 'required',
 		'namaMK' => 'required',
-		'kelas' => 'required',
+		'kehadiran' => 'required',
     ];
 
     protected $perPage = 20;
@@ -50,7 +50,7 @@ class Student extends Model
      *
      * @var array
      */
-    protected $fillable = ['nim','nama','tugasQuiz','uts','uas','nilai','nilaiAngka','nilaiHuruf','keterangan','namaMK','kelas','statusPembayaran'];
+    protected $fillable = ['nim','nama','tugasQuiz','uts','uas','nilai','nilaiAngka','nilaiHuruf','keterangan','namaMK','kehadiran','statusPembayaran'];
 
 
 

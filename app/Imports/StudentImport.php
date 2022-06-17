@@ -25,8 +25,7 @@ class StudentImport implements ToModel
             'nilaiHuruf' => $row[8], 
             'keterangan' => $row[9],
             'namaMK' => $row[10], 
-            'kelas' => $row[11],
-            'statusPembayaran' => $row[12],
+            'kehadiran' => $row[11],
         ]);
     }
 }

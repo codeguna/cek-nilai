@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Tugas/Quiz:</strong>
-                            {{ $student->tugas/quiz }}
+                            {{ $student->tugasQuiz }}
                         </div>
                         <div class="form-group">
                             <strong>Uts:</strong>
@@ -61,8 +61,8 @@
                             {{ $student->namaMK }}
                         </div>
                         <div class="form-group">
-                            <strong>Kelas:</strong>
-                            {{ $student->kelas }}
+                            <strong>Kehadiran:</strong>
+                            {{ $student->kehadiran }}
                         </div>
                         <div class="form-group">
                             <strong>Statuspembayaran:</strong>

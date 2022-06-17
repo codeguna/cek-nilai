@@ -25,7 +25,7 @@ class CreateStudentsTable extends Migration
             $table->char('nilaiHuruf', 1);
             $table->string('keterangan');
             $table->string('namaMK');
-            $table->string('kelas');
+            $table->integer('kehadiran');
             $table->boolean('statusPembayaran')->nullable()->default(0);
             $table->timestamps();
         });

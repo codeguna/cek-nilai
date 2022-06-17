@@ -49,7 +49,7 @@
 										<th>Nilaihuruf</th>
 										<th>Keterangan</th>
 										<th>Namamk</th>
-										<th>Kelas</th>
+										<th>Kehadiran</th>
 										<th>Statuspembayaran</th>
 
                                         <th></th>
@@ -70,7 +70,7 @@
 											<td>{{ $student->nilaiHuruf }}</td>
 											<td>{{ $student->keterangan }}</td>
 											<td>{{ $student->namaMK }}</td>
-											<td>{{ $student->kelas }}</td>
+											<td>{{ $student->kehadiran }}</td>
 											<td>{{ $student->statusPembayaran }}</td>
 
                                             <td>

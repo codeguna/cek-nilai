@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,5 +27,14 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function search(Request $request)
+    {
+
+        $cari = $request->cari;
+        $students  = Student::where('nim', '=', $cari)
+            ->get();
+
+        return view('student.result', compact('students'))->with('i');
     }
 }

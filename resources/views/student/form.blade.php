@@ -53,8 +53,8 @@
         </div>
         <div class="form-group">
             {{ Form::label('kelas') }}
-            {{ Form::text('kelas', $student->kelas, ['class' => 'form-control' . ($errors->has('kelas') ? ' is-invalid' : ''), 'placeholder' => 'Kelas']) }}
-            {!! $errors->first('kelas', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::text('kelas', $student->kehadiran, ['class' => 'form-control' . ($errors->has('kehadiran') ? ' is-invalid' : ''), 'placeholder' => 'Kehadiran']) }}
+            {!! $errors->first('kehadiran', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('statusPembayaran') }}
