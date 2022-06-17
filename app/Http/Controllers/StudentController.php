@@ -135,7 +135,7 @@ class StudentController extends Controller
         // alihkan halaman kembali
         return redirect()->route('admin.students.index');
     }
-    public function searchStudent(Request $request)
+    public function search(Request $request)
     {
 
         $cari = $request->cari;

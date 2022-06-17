@@ -26,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+         $students = Student::All();
+         return view('home', compact('students'));
     }
     public function search(Request $request)
     {
