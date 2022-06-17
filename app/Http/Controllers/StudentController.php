@@ -22,7 +22,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::paginate();
+        $students = Student::orderBy('nama', 'asc')->paginate();
 
         return view('student.index', compact('students'))
             ->with('i', (request()->input('page', 1) - 1) * $students->perPage());
@@ -110,29 +110,38 @@ class StudentController extends Controller
         return redirect()->route('admin.students.index')
             ->with('success', 'Student deleted successfully');
     }
-    public function import(Request $request) 
-	{
-		// validasi
-		$this->validate($request, [
-			'file' => 'required|mimes:csv,xls,xlsx'
-		]);
+    public function import(Request $request)
+    {
+        // validasi
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
 
-		// menangkap file excel
-		$file = $request->file('file');
+        // menangkap file excel
+        $file = $request->file('file');
 
-		// membuat nama file unik
-		$nama_file = rand().$file->getClientOriginalName();
+        // membuat nama file unik
+        $nama_file = rand() . $file->getClientOriginalName();
 
-		// upload ke folder file_siswa di dalam folder public
-		$file->move('file_siswa',$nama_file);
+        // upload ke folder file_siswa di dalam folder public
+        $file->move('file_siswa', $nama_file);
 
-		// import data
-		Excel::import(new StudentImport, public_path('/file_siswa/'.$nama_file));
+        // import data
+        Excel::import(new StudentImport, public_path('/file_siswa/' . $nama_file));
 
-		// notifikasi dengan session
-		Session::flash('sukses','Data Siswa Berhasil Diimport!');
+        // notifikasi dengan session
+        Session::flash('sukses', 'Data Siswa Berhasil Diimport!');
 
-		// alihkan halaman kembali
+        // alihkan halaman kembali
         return redirect()->route('admin.students.index');
-	}
+    }
+    public function searchStudent(Request $request)
+    {
+
+        $cari = $request->cari;
+        $students  = Student::where('nim', '=', $cari)
+            ->get();
+
+            return redirect()->route('admin.students.index');
+    }
 }

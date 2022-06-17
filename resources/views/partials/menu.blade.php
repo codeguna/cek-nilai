@@ -1,34 +1,36 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
-
         <ul class="nav">
-            <li class="nav-item">
-                <a href="{{ route("admin.home") }}" class="nav-link">
-                    <i class="nav-icon fas fa-fw fa-tachometer-alt">
+            @can('operator')
+                <li class="nav-item">
+                    <a href="{{ route('admin.home') }}" class="nav-link">
+                        <i class="nav-icon fas fa-fw fa-tachometer-alt">
 
-                    </i>
-                    {{ trans('global.dashboard') }}
-                </a>
-            </li>
+                        </i>
+                        {{ trans('global.dashboard') }}
+                    </a>
+                </li>
+            @endcan
             @can('users_manage')
-            <li class="nav-item nav-dropdown">
-                <a class="nav-link  nav-dropdown-toggle" href="#">
-                    <i class="fa-fw fas fa-university nav-icon">
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link  nav-dropdown-toggle" href="#">
+                        <i class="fa-fw fas fa-university nav-icon">
 
-                    </i>
-                    Nilai Mahasiswa
-                </a>
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a href="{{ route("admin.students.index") }}" class="nav-link {{ request()->is('admin/students') || request()->is('admin/students/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-user nav-icon">
+                        </i>
+                        Nilai Mahasiswa
+                    </a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.students.index') }}"
+                                class="nav-link {{ request()->is('admin/students') || request()->is('admin/students/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-user nav-icon">
 
-                            </i>
-                            Manage Nilai Mahasiswa
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                                </i>
+                                Manage Nilai Mahasiswa
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
@@ -38,7 +40,8 @@
                     </a>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <a href="{{ route("admin.permissions.index") }}" class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.permissions.index') }}"
+                                class="nav-link {{ request()->is('admin/permissions') || request()->is('admin/permissions/*') ? 'active' : '' }}">
                                 <i class="fa-fw fas fa-unlock-alt nav-icon">
 
                                 </i>
@@ -46,7 +49,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("admin.roles.index") }}" class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.roles.index') }}"
+                                class="nav-link {{ request()->is('admin/roles') || request()->is('admin/roles/*') ? 'active' : '' }}">
                                 <i class="fa-fw fas fa-briefcase nav-icon">
 
                                 </i>
@@ -54,7 +58,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route("admin.users.index") }}" class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.users.index') }}"
+                                class="nav-link {{ request()->is('admin/users') || request()->is('admin/users/*') ? 'active' : '' }}">
                                 <i class="fa-fw fas fa-user nav-icon">
 
                                 </i>
@@ -73,7 +78,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                <a href="#" class="nav-link"
+                    onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">
 
                     </i>

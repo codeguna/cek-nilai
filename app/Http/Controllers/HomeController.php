@@ -36,5 +36,5 @@ class HomeController extends Controller
             ->get();
 
         return view('student.result', compact('students'))->with('i');
-    }
+    }    
 }

@@ -33,24 +33,29 @@
                     @endif
                         @include('student.modal')
                     <div class="card-body">
+                        <form action="{{ route('admin.student.search') }}" method="GET">
+                            @csrf
+                            <input type="text" class="form-control" name="cari" value="{{ old('cari') }}">
+                        </form>
+                        
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nim</th>
+										<th>NIM</th>
 										<th>Nama</th>
 										<th>Tugas/Quiz</th>
-										<th>Uts</th>
-										<th>Uas</th>
+										<th>UTS</th>
+										<th>UAS</th>
 										<th>Nilai</th>
-										<th>Nilaiangka</th>
-										<th>Nilaihuruf</th>
-										<th>Keterangan</th>
+										<th>Nilai Angka</th>
+										<th>Nilai Huruf</th>
+										<th>Ket.</th>
 										<th>Namamk</th>
 										<th>Kehadiran</th>
-										<th>Statuspembayaran</th>
+										<th>Pembayaran</th>
 
                                         <th></th>
                                     </tr>
@@ -71,7 +76,15 @@
 											<td>{{ $student->keterangan }}</td>
 											<td>{{ $student->namaMK }}</td>
 											<td>{{ $student->kehadiran }}</td>
-											<td>{{ $student->statusPembayaran }}</td>
+											<td>
+                                                
+                                                @if($student->statusPembayaran == 0)
+                                                <input type="hidden" name="status" value="1">
+                                                <button type="submit" class="btn btn-danger">Belum Lunas</button> 
+                                                @else
+                                                <button type="submit" class="btn btn-success">Sudah Lunas</button>
+                                                @endif
+                                            </td>
 
                                             <td>
                                                 <form action="{{ route('admin.students.destroy',$student->id) }}" method="POST">

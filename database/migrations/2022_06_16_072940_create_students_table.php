@@ -17,10 +17,10 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('nim');
             $table->string('nama');
-            $table->decimal('tugasQuiz', 4,2);
-            $table->decimal('uts', 4,2);
-            $table->decimal('uas', 4,2);
-            $table->decimal('nilai', 4,2);
+            $table->decimal('tugasQuiz', 5,2);
+            $table->decimal('uts', 5,2);
+            $table->decimal('uas', 5,2);
+            $table->decimal('nilai', 5,2);
             $table->integer('nilaiAngka');
             $table->char('nilaiHuruf', 1);
             $table->string('keterangan');
