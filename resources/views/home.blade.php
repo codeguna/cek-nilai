@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('nilai.search') }}" method="GET">
+                        <form action="{{ route('nilai.search') }}" method="GET" target="_blank">
                             <label class="form-group">Cetak Nilai</label>
                             <input class="form-control" type="text" name="cari" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" placeholder="Input NRP disini ..."
                                 required>
