@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $students = Student::All();
+        $students = Student::groupBy('nama','nim')->select('nim','nama')->get();
          return view('home', compact('students'));
     }
     public function search(Request $request)
