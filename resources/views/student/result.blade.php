@@ -25,8 +25,10 @@
         font-size: 20pt;
     }
 </style>
-
 <body>
+    <script>
+        window.print()
+    </script>
     <div class="row">
         <div class="col-md-12">
             <p class="center-text title"><strong>INSTITUT DIGITAL EKONOMI LPKIA BANDUNG</strong></p>
