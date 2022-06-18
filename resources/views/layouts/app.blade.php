@@ -21,7 +21,7 @@
     @yield('styles')
 </head>
 
-<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
+<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page" style="background-image: url(https://img.freepik.com/free-vector/school-seamless-patterns-vector-background_109327-129.jpg?w=740)">
     <div class="app flex-row align-items-center">
         <div class="container">
             @yield("content")

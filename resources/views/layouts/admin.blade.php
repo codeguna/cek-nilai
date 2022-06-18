@@ -28,9 +28,9 @@
         <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">
-            <span class="navbar-brand-full">POT IDE LPKIA</span>
-            <span class="navbar-brand-minimized">POT</span>
+        <a class="navbar-brand" href="{{ route('admin.home') }}">
+            <span class="navbar-brand-full"><img src="{{ asset('img/logo-full-lpkia.png') }}"></span>
+            <span class="navbar-brand-minimized"><img src="{{ asset('img/logo-half-lpkia.png') }}"></span>
         </a>
         <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
             <span class="navbar-toggler-icon"></span>

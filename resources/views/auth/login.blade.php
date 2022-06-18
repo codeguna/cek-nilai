@@ -12,7 +12,7 @@
                     @endif
                     <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-                        <h1>{{ env('APP_NAME', 'Permissions Manager') }}</h1>
+                        <h1>IDE LPKIA | P.O.T</h1>
                         <p class="text-muted">Login</p>
 
                         <div class="input-group mb-3">
@@ -55,12 +55,6 @@
                                 <button type="submit" class="btn btn-primary px-4">
                                     Login
                                 </button>
-                            </div>
-                            <div class="col-6 text-right">
-                                <a class="btn btn-link px-0" href="{{ route('password.request') }}">
-                                    Forgot your password?
-                                </a>
-
                             </div>
                         </div>
                     </form>
