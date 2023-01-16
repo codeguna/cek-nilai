@@ -28,8 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Student extends Model
 {
-    
-    static $rules = [
+
+	static $rules = [
 		'nim' => 'required',
 		'nama' => 'required',
 		'tugasQuiz' => 'required',
@@ -41,17 +41,15 @@ class Student extends Model
 		'keterangan' => 'required',
 		'namaMK' => 'required',
 		'kehadiran' => 'required',
-    ];
+		'tunggakan' => 'tunggakan'
+	];
 
-    protected $perPage = 20;
+	protected $perPage = 20;
 
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['nim','nama','tugasQuiz','uts','uas','nilai','nilaiAngka','nilaiHuruf','keterangan','namaMK','kehadiran','statusPembayaran'];
-
-
-
+	/**
+	 * Attributes that should be mass-assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan'];
 }

@@ -17,7 +17,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <a href="https://docs.google.com/spreadsheets/d/1i4f1zpPF5Y9xRNcz70ZKz7gLidIiYsFx/edit?usp=sharing&ouid=118328583475198669663&rtpof=true&sd=true" class="btn btn-success" target="_blank">Tempate</a>
+                    <a href="https://docs.google.com/spreadsheets/d/1vMZ70ZUuEcJvAxE48dZt1ipGFYCx1sS0/edit?usp=share_link&ouid=118328583475198669663&rtpof=true&sd=true"
+                        class="btn btn-success" target="_blank">Tempate</a>
                     <button type="submit" class="btn btn-primary">Import</button>
                 </div>
             </div>

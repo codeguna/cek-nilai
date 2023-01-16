@@ -38,6 +38,7 @@
                                                 {{ $user->nim ?? '' }}
                                                 <form action="{{ route('nilai.search') }}" method="GET" target="_blank">
                                                     <input type="hidden" name="cari" value="{{ $user->nim }}">
+                                                    <input type="hidden" name="nama" value="{{ $user->nama }}">
                                                     <button style="margin-top: 10px" class="btn btn-warning"><i
                                                             class="fas fa-print"></i></button>
                                                 </form>

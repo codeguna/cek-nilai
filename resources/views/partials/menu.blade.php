@@ -1,7 +1,7 @@
 <div class="sidebar">
     <nav class="sidebar-nav">
         <ul class="nav">
-            @can('operator')
+            @canany(['operator', 'users_manage'])
                 <li class="nav-item">
                     <a href="{{ route('admin.home') }}" class="nav-link">
                         <i class="nav-icon fas fa-fw fa-print">
@@ -10,7 +10,7 @@
                         Cek Nilai & Print
                     </a>
                 </li>
-            @endcan
+            @endcanany
             @can('users_manage')
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">

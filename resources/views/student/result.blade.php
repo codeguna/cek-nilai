@@ -25,6 +25,7 @@
         font-size: 20pt;
     }
 </style>
+
 <body>
     <script>
         window.print()
@@ -67,7 +68,7 @@
                         <th class="rjust">Tugas/Quiz</th>
                         <th class="rjust">UTS</th>
                         <th class="rjust">UAS</th>
-                        <th class="nowrap rjust">% Hadir</th>
+                        <th>Kehadiran</th>
                     </tr>
                 </thead>
 
@@ -79,6 +80,8 @@
                             <td>
                                 {{ $student->namaMK }}</td>
                             @if ($student->statusPembayaran == 0)
+                                <td>
+                                    x</td>
                                 <td>
                                     x</td>
                                 <td>
@@ -100,30 +103,37 @@
                     @endforeach
                 </tbody>
             </table>
+            <p>Indeks Prestasi: <strong>{{ $getIP }}</strong></p>
         </div>
 
         <div class="col-md-12">
             <hr class="new">
+
             @foreach ($students as $status)
+                @php
+                    $tunggakan = 'Rp ' . number_format($status->tunggakan, 2, ',', '.');
+                @endphp
                 @if ($loop->first)
                     <p style="margin-left: 8%">Tunggakan Administrasi:
 
                         @if ($status->statusPembayaran == 0)
-                            <b>Belum melakukan pembayaran <= 60%</b><br />
+                            <b>Belum melakukan pembayaran <= 50%</b><br />
+                                    <b>Jumlah Tunggakan: {{ $tunggakan }}</b>
                                 @else
-                                    <b>Telah melakukan pembayaran >= 60%</b><br />
+                                    <b>Telah melakukan pembayaran >= 50%</b><br />
+                                    <b>Jumlah Tunggakan: {{ $tunggakan }}</b>
                         @endif
                 @endif
             @endforeach
+            <br />
             Dicetak pada tanggal: {{ date('d-m-Y', time()) }}<br />
             Dalam rangka pertemuan orang tua siswa</p>
-            <br />
-            <p><i>Dalam Rangka digitalisasi,
+            <footer><i>Dalam Rangka digitalisasi,
                     Bapak/Ibu orangtua/wali mahasiswa/i IDE LPKIA<br />
                     dapat memantau kemajuan studi putra/i
                     melalui aplikasi atau website siakad.<br />
                     silahkan lengkapi data orangtua pada Biodata Mahasiswa/i
-                    <br />atau melalui link berikut: <b>lpkia.ac.id/pertemuanortu</b></i></p>
+                    <br />atau melalui link berikut: <b>lpkia.ac.id/pertemuanortu</b></i></footer>
         </div>
     </div>
 </body>

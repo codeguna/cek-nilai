@@ -13,9 +13,9 @@ class StudentAdditional extends Controller
     {
         $cari = $request->cariNama;
         $students = DB::table('students')
-                    ->where('nama', 'like',"%".$cari."%")
-                    ->paginate(10);
- 
-		return view('home',['students' => $students]);
+            ->where('nama', 'like', "%" . $cari . "%")
+            ->paginate(10);
+
+        return view('home', ['students' => $students]);
     }
 }
