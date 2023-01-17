@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h4>
+                        <h1 class="display-4"><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h1>
                     </div>
 
                     <div class="card-body">
