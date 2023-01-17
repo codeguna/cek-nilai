@@ -126,13 +126,13 @@
                 @endif
             @endforeach
             <br />
-            Dicetak pada tanggal: {{ date('d-m-Y', time()) }}<br />
-            Dalam rangka pertemuan orang tua siswa</p>
-            <footer><i>Dalam Rangka digitalisasi,
-                    Bapak/Ibu orangtua/wali mahasiswa/i IDE LPKIA<br />
+            Dicetak pada tanggal: {{ date('d-m-Y H:i:s') }}<br />
+            Dalam rangka Pertemuan Orang Tua Siswa</p>
+            <footer><i>Dalam Rangka Digitalisasi,
+                    Bapak/Ibu Orangtua/Wali Mahasiswa/i IDE LPKIA<br />
                     dapat memantau kemajuan studi putra/i
-                    melalui aplikasi atau website siakad.<br />
-                    silahkan lengkapi data orangtua pada Biodata Mahasiswa/i
+                    melalui Aplikasi atau Website SiAkad.<br />
+                    Silahkan lengkapi data Orangtua pada Biodata Mahasiswa/i
                     <br />atau melalui link berikut: <b>lpkia.ac.id/pertemuanortu</b></i></footer>
         </div>
     </div>

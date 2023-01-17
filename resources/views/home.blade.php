@@ -6,41 +6,36 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        List Nama Mahasiswa
+                        <h4>List Nama Mahasiswa</h4>
                     </div>
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class=" table table-bordered table-striped table-hover datatable datatable-User">
+                            <table class=" table table-borderless table-hover datatable datatable-User">
                                 <thead>
                                     <tr>
-                                        <th width="10">
-
-                                        </th>
-                                        <th>
+                                        <th style="width: 80%">
                                             Nama
                                         </th>
-                                        <th>
+                                        <th style="width: 20%">
                                             NRP
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($students as $key => $user)
-                                        <tr data-entry-id="{{ $user->id }}">
+                                        <tr>
+                                            <td>
+                                                <strong>{{ $user->nama ?? '' }}</strong>
+                                            </td>
                                             <td>
 
-                                            </td>
-                                            <td>
-                                                {{ $user->nama ?? '' }}
-                                            </td>
-                                            <td>
-                                                {{ $user->nim ?? '' }}
                                                 <form action="{{ route('nilai.search') }}" method="GET" target="_blank">
                                                     <input type="hidden" name="cari" value="{{ $user->nim }}">
                                                     <input type="hidden" name="nama" value="{{ $user->nama }}">
-                                                    <button style="margin-top: 10px" class="btn btn-warning"><i
-                                                            class="fas fa-print"></i></button>
+                                                    <button style="margin-top: 10px" class="btn btn-warning w-100"><i
+                                                            class="fas fa-print"></i>
+                                                        <strong>{{ $user->nim ?? '' }}</strong> </button>
                                                 </form>
                                             </td>
                                         </tr>
