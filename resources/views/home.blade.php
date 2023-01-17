@@ -15,10 +15,10 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 80%">
-                                            Nama
+                                            <h1 class="display-6">Nama</h1>
                                         </th>
                                         <th style="width: 20%">
-                                            NRP
+                                            <h1 class="display-6">NRP</h1>
                                         </th>
                                     </tr>
                                 </thead>
