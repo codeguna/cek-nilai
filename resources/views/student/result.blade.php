@@ -96,7 +96,7 @@
                             @endif
 
                             <td>
-                                {{ $student->kehadiran }} </td>
+                                {{ $student->kehadiran }} %</td>
                         </tr>
                     @endforeach
                 </tbody>
