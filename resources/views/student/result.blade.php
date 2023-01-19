@@ -86,8 +86,6 @@
                                     x</td>
                                 <td>
                                     x</td>
-                                <td>
-                                    x</td>
                             @else
                                 <td>
                                     {{ $student->tugasQuiz }} </td>
