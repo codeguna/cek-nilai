@@ -57,7 +57,7 @@
 
             $.extend(true, $.fn.dataTable.defaults, {
                 order: [
-                    ['nama', 'asc']
+                    [1, 'asc']
                 ],
                 pageLength: 10,
             });
