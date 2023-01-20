@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
     <title>Result - Mahasiswa</title>
 </head>
 <style>
@@ -81,11 +82,14 @@
                                 {{ $student->namaMK }}</td>
                             @if ($student->statusPembayaran == 0)
                                 <td>
-                                    x</td>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </td>
                                 <td>
-                                    x</td>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </td>
                                 <td>
-                                    x</td>
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </td>
                             @else
                                 <td>
                                     {{ $student->tugasQuiz }} </td>
@@ -101,7 +105,15 @@
                     @endforeach
                 </tbody>
             </table>
-            <p>Indeks Prestasi: <strong>{{ number_format((float) $getIP, 2, '.', '') }}</strong></p>
+            @foreach ($students as $bayar)
+                @if ($loop->first)
+                    @if ($bayar->statusPembayaran == 1)
+                        <p>Indeks Prestasi: <strong>{{ number_format((float) $getIP, 2, '.', '') }}</strong></p>
+                    @else
+                        <p>Indeks Prestasi: <strong><i class="fa fa-times" aria-hidden="true"></i></p>
+                    @endif
+                @endif
+            @endforeach
         </div>
 
         <div class="col-md-12">
