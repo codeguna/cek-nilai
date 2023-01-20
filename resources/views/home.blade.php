@@ -15,10 +15,10 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 80%">
-                                            <h1 class="display-6">Nama</h1>
+                                            <h1 class="display-6"><i class="fa fa-user" aria-hidden="true"></i> Nama</h1>
                                         </th>
                                         <th style="width: 20%">
-                                            <h1 class="display-6">NRP</h1>
+                                            <h1 class="display-6"><i class="fa fa-hashtag" aria-hidden="true"></i> NRP</h1>
                                         </th>
                                     </tr>
                                 </thead>

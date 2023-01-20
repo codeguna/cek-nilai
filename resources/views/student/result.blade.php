@@ -101,7 +101,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <p>Indeks Prestasi: <strong>{{ $getIP }}</strong></p>
+            <p>Indeks Prestasi: <strong>{{ number_format((float) $getIP, 2, '.', '') }}</strong></p>
         </div>
 
         <div class="col-md-12">
