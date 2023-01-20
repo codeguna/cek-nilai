@@ -110,7 +110,7 @@
                     @if ($bayar->statusPembayaran == 1)
                         <p>Indeks Prestasi: <strong>{{ number_format((float) $getIP, 2, '.', '') }}</strong></p>
                     @else
-                        <p>Indeks Prestasi: <strong><i class="fa fa-times" aria-hidden="true"></i></p>
+                        <p>Indeks Prestasi: <strong><i class="fa fa-times" aria-hidden="true"></i></strong></p>
                     @endif
                 @endif
             @endforeach
