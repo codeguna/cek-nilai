@@ -59,6 +59,16 @@
                 @endif
             @endforeach
         </div>
+        <div class="col-md-6">
+            <p style="margin-left: 16%"><b>Kelas</b></p>
+        </div>
+        <div class="col-md-6">
+            @foreach ($students as $kelas)
+                @if ($loop->first)
+                    <p style="text-align: right; margin-right: 15%"><b>{{ $kelas->kelas }}</b></p>
+                @endif
+            @endforeach
+        </div>
         <div class="col-lg-12">
             <table class="table">
                 <thead>

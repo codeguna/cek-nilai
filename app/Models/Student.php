@@ -30,18 +30,19 @@ class Student extends Model
 {
 
 	static $rules = [
-		'nim' => 'required',
-		'nama' => 'required',
-		'tugasQuiz' => 'required',
-		'uts' => 'required',
-		'uas' => 'required',
-		'nilai' => 'required',
-		'nilaiAngka' => 'required',
-		'nilaiHuruf' => 'required',
-		'keterangan' => 'required',
-		'namaMK' => 'required',
-		'kehadiran' => 'required',
-		'tunggakan' => 'tunggakan'
+		'nim' 			=> 'required',
+		'nama' 			=> 'required',
+		'tugasQuiz' 	=> 'required',
+		'uts' 			=> 'required',
+		'uas' 			=> 'required',
+		'nilai' 		=> 'required',
+		'nilaiAngka' 	=> 'required',
+		'nilaiHuruf' 	=> 'required',
+		'keterangan' 	=> 'required',
+		'namaMK' 		=> 'required',
+		'kehadiran' 	=> 'required',
+		'tunggakan' 	=> 'required',
+		'kelas' 		=> 'required',
 	];
 
 	protected $perPage = 20;
@@ -51,5 +52,5 @@ class Student extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan'];
+	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan', 'kelas'];
 }

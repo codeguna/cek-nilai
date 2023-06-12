@@ -56,6 +56,7 @@
                                         <th>Nilai Huruf</th>
                                         <th>Ket.</th>
                                         <th>Namamk</th>
+                                        <th>Kelas</th>
                                         <th>Kehadiran</th>
                                         <th>Pembayaran</th>
                                         <th>Tunggakan</th>
@@ -82,6 +83,7 @@
                                             <td>{{ $student->nilaiHuruf }}</td>
                                             <td>{{ $student->keterangan }}</td>
                                             <td>{{ $student->namaMK }}</td>
+                                            <td>{{ $student->kelas }}</td>
                                             <td>{{ $student->kehadiran }}</td>
                                             <td>
 
