@@ -161,7 +161,11 @@
                     $tunggakan = str_replace(';', '<br>', $tunggakanMhs->tunggakan);
                 @endphp
                 @if ($loop->first)
-                    <p style="margin-left: 8%">{!! $tunggakan !!}</p>
+                    @if ($tunggakanMhs->tunggakan == 0)
+                        <p style="margin-left: 8%">Sudah melakukan pelunasan pembayaran</p>
+                    @else
+                        <p style="margin-left: 8%">{!! $tunggakan !!}</p>
+                    @endif
                 @endif
             @endforeach
             <br />
