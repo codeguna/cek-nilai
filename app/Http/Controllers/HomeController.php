@@ -35,8 +35,7 @@ class HomeController extends Controller
         $cari = $request->cari;
         $getNama = $request->nama;
 
-        $students  = Student::where('nim', '=', $cari)
-            ->get();
+        $students  = Student::where('nim', '=', $cari)->orderBy('namaMK', 'ASC')->get();
         $countMK = Student::select('namaMK')->where('nama', '=', $getNama)->count();
         $sumUTS = Student::select('uts')->where('nama', '=', $getNama)->sum('uts');
         $getIP = $sumUTS / $countMK;

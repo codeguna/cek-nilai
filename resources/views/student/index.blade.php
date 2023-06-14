@@ -59,7 +59,6 @@
                                         <th>Kelas</th>
                                         <th>Kehadiran</th>
                                         <th>Pembayaran</th>
-                                        <th>Tunggakan</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -67,9 +66,6 @@
 
 
                                     @foreach ($students as $student)
-                                        @php
-                                            $hasil_rupiah = 'Rp ' . number_format($student->tunggakan, 2, ',', '.');
-                                        @endphp
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
@@ -94,7 +90,6 @@
                                                     <button type="submit" class="btn btn-success">Sudah Lunas</button>
                                                 @endif
                                             </td>
-                                            <td>{{ $hasil_rupiah }}</td>
                                             <td>
                                                 <form action="{{ route('admin.students.destroy', $student->id) }}"
                                                     method="POST">
