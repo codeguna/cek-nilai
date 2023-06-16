@@ -180,7 +180,7 @@
                     <br />atau melalui link berikut: <b>lpkia.ac.id/pertemuanortu</b></i></footer>
         </div>
     </div>
-    <footer class="footer" style="margin-top: 4em">
+    <footer class="footer">
         <p>
             <strong>&copy; 2023 IDE LPKIA.</strong>
             All rights reserved. | Dicetak pada:
