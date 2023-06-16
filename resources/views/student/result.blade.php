@@ -165,9 +165,11 @@
                         <p style="margin-left: 8%">Sudah melakukan pelunasan pembayaran</p>
                     @else
                         <p style="margin-left: 8%">{!! $tunggakan !!}</p>
+                        <p>Data tagihan diambil pada tanggal <strong>16 Juni Jam 12.00 WIB</strong></p>
                     @endif
                 @endif
             @endforeach
+
             <br />
             <p>Dalam rangka Pertemuan Orang Tua Siswa</p>
             <footer><i>Dalam Rangka Digitalisasi,
@@ -179,7 +181,11 @@
         </div>
     </div>
     <footer class="footer" style="margin-top: 4em">
-        <p><strong>&copy; 2023 IDE LPKIA.</strong> All rights reserved. | Dicetak pada: <span id="timestamp"></span></p>
+        <p>
+            <strong>&copy; 2023 IDE LPKIA.</strong>
+            All rights reserved. | Dicetak pada:
+            <span id="timestamp"></span>
+        </p>
     </footer>
     <script>
         // Mengatur timestamp pada elemen span dengan id "timestamp"
