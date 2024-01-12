@@ -182,7 +182,7 @@
     </div>
     <footer class="footer">
         <p>
-            <strong>&copy; 2023 IDE LPKIA.</strong>
+            <strong>&copy; {{ date('Y') }} IDE LPKIA.</strong>
             All rights reserved. | Dicetak pada:
             <span id="timestamp"></span>
         </p>
