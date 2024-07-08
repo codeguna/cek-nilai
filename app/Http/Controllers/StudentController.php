@@ -139,7 +139,7 @@ class StudentController extends Controller
     {
 
         $cari = $request->cari;
-        $students  = Student::where('nim', '=', $cari)
+        $students  = Student::where('kelas', '=', $cari)
             ->get();
 
             return redirect()->route('admin.students.index');
