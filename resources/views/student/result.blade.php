@@ -165,7 +165,7 @@
                         <p style="margin-left: 8%">Sudah melakukan pelunasan pembayaran</p>
                     @else
                         <p style="margin-left: 8%">{!! $tunggakan !!}</p>
-                        <p>Data tagihan diambil pada tanggal <strong>16 Juni Jam 12.00 WIB</strong></p>
+                        <p>Data tagihan diambil pada tanggal <strong>{{ $student->created_at->format('d F Y H:i') }}</strong></p>
                     @endif
                 @endif
             @endforeach
