@@ -16,7 +16,7 @@
     }
 
     hr.new {
-        height: 5px;
+        height: 3px;
         border-top: 1px solid black;
         border-bottom: 2px solid black;
         width: 100%;
@@ -44,7 +44,7 @@
     <script>
         window.print()
     </script>
-    <header>
+    <header style="top: 0">
         <header>
             <img class="gambar"
                 src="https://lh3.googleusercontent.com/pw/AM-JKLWV3Ay9WoCetoK6IyCemuKVcWNWJ7DbvOnBljUfgvsDWUM7r6hXBgAROg2kOsOJm4jbPdFrNTsgAGfzbbmreQmjz2yApoCyks2E8xVoA0U_K7xXTTW_tCJ7osnbWYMjlDoovqdgaQVvxDj54p3t8Br_=w351-h379-no?authuser=1"
@@ -57,40 +57,30 @@
         </header>
     </header>
     <div class="row">
+        @if ($firstStudent = $students->first())
         <div class="col-md-6">
             <p style="margin-left: 16%;"><b>Nama</b></p>
         </div>
         <div class="col-md-6">
-            @foreach ($students as $nama)
-                @if ($loop->first)
-                    <p style="text-align: right; margin-right: 15%"><b>{{ $nama->nama }}</b></p>
-                @endif
-            @endforeach
+            <p style="text-align: right; margin-right: 15%;"><b>{{ $firstStudent->nama }}</b></p>
         </div>
         <div class="col-md-6">
-            <p style="margin-left: 16%"><b>NRP</b></p>
+            <p style="margin-left: 16%;"><b>NRP</b></p>
         </div>
         <div class="col-md-6">
-            @foreach ($students as $nim)
-                @if ($loop->first)
-                    <p style="text-align: right; margin-right: 15%"><b>{{ $nim->nim }}</b></p>
-                @endif
-            @endforeach
+            <p style="text-align: right; margin-right: 15%;"><b>{{ $firstStudent->nim }}</b></p>
         </div>
         <div class="col-md-6">
-            <p style="margin-left: 16%"><b>Kelas</b></p>
+            <p style="margin-left: 16%;"><b>Kelas</b></p>
         </div>
         <div class="col-md-6">
-            @foreach ($students as $kelas)
-                @if ($loop->first)
-                    <p style="text-align: right; margin-right: 15%"><b>{{ $kelas->kelas }}</b></p>
-                @endif
-            @endforeach
+            <p style="text-align: right; margin-right: 15%;"><b>{{ $firstStudent->kelas }}</b></p>
         </div>
-        <div class="col-lg-12">
-            <table class="table">
+    @endif
+    
+        <div class="col-md-12">
+            <table class="table" style="font-size: 12pt">
                 <thead>
-
                     <tr>
                         <th class="rjust">No</th>
                         <th class="fill">Mata Kuliah</th>
@@ -164,13 +154,10 @@
                     @if ($tunggakanMhs->tunggakan == 0)
                         <p style="margin-left: 8%">Sudah melakukan pelunasan pembayaran</p>
                     @else
-                        <p style="margin-left: 8%">{!! $tunggakan !!}</p>
-                        <p>Data tagihan diambil pada tanggal <strong>{{ $student->created_at->format('d F Y H:i') }}</strong></p>
+                        <p style="margin-left: 8%">{!! $tunggakan !!} Data tagihan diambil pada tanggal <strong>{{ $student->created_at->format('d F Y H:i') }}</strong></p>
                     @endif
                 @endif
             @endforeach
-
-            <br />
             <p>Dalam rangka Pertemuan Orang Tua Siswa</p>
             <footer><i>Dalam Rangka Digitalisasi,
                     Bapak/Ibu Orangtua/Wali Mahasiswa/i IDE LPKIA<br />
