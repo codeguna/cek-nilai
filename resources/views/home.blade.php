@@ -26,7 +26,7 @@
                                             </center>
                                         </th>
                                         <th style="width: 10%">
-                                            <h3 class="display-8">udah
+                                            <h3 class="display-8">Sudah
                                                 dicetak?
                                             </h3>
                                         </th>
@@ -77,6 +77,11 @@
                                                     <i class="fa fa-cog" aria-hidden="true"></i> AKSI
                                                 </h3>
                                             </center>
+                                        </th>
+                                        <th style="width: 10%">
+                                            <h3 class="display-8">Sudah
+                                                dicetak?
+                                            </h3>
                                         </th>
                                     </tr>
                                 </tfoot>
