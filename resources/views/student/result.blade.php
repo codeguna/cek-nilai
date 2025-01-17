@@ -164,7 +164,9 @@
                     dapat memantau kemajuan studi putra/i
                     melalui Aplikasi atau Website SiAkad.<br />
                     Silahkan lengkapi data Orangtua pada Biodata Mahasiswa/i
-                    <br />atau melalui link berikut: <b>lpkia.ac.id/pertemuanortu</b></i></footer>
+                    <br />atau melalui qrcode berikut atau lpkia.ac.id/pertemuanortu : 
+                    <img src="{{ asset('img/qrcode.png') }}" style="height: 100px">
+            </footer>
         </div>
     </div>
     <footer class="footer">
