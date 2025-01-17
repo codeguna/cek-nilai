@@ -27,18 +27,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students = Student::groupBy('nama', 'nim')->select('nim', 'nama')->get();
+        $students = Student::groupBy('nama', 'nim','is_printed')->select('nim', 'nama','is_printed')->get();
         return view('home', compact('students'));
     }
     public function search(Request $request)
     {
-        $cari = $request->cari;
-        $getNama = $request->nama;
+        $cari       = $request->cari;
+        $getNama    = $request->nama;
 
-        $students  = Student::where('nim', '=', $cari)->orderBy('namaMK', 'ASC')->get();
-        $countMK = Student::select('namaMK')->where('nama', '=', $getNama)->count();
-        $sumUTS = Student::select('uts')->where('nama', '=', $getNama)->sum('uts');
-        $getIP = $sumUTS / $countMK;
+        $students   = Student::where('nim', '=', $cari)->orderBy('namaMK', 'ASC')->get();
+        $countMK    = Student::select('namaMK')->where('nama', '=', $getNama)->count();
+        $sumUTS     = Student::select('uts')->where('nama', '=', $getNama)->sum('uts');
+        $getIP      = $sumUTS / $countMK;
+
+        $updateStudents = Student::where('nim', '=', $cari)->first();
+        // Assuming $cari is an array of 'nim' values
+        $updateStudents = Student::where('nim', $cari)->update([
+            'is_printed' => 1
+        ]);
 
         return view('student.result', compact('students', 'countMK', 'getIP'))->with('i');
     }

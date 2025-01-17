@@ -52,5 +52,5 @@ class Student extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan', 'kelas'];
+	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan', 'kelas','is_printed'];
 }

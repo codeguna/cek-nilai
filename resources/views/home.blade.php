@@ -6,7 +6,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header bg-info">
-                        <h1 class="display-4"><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h1>
+                        <h3 class="display-8"><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h3>
                     </div>
 
                     <div class="card-body">
@@ -15,16 +15,22 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 80%">
-                                            <h1 class="display-6"><i class="fa fa-user" aria-hidden="true"></i> Nama|NRP
-                                            </h1>
+                                            <h3 class="display-8"><i class="fa fa-user" aria-hidden="true"></i> Nama|NRP
+                                            </h3>
                                         </th>
-                                        <th style="width: 20%">
+                                        <th style="width: 10%">
                                             <center>
-                                                <h1 class="display-6">
+                                                <h3 class="display-8">
                                                     <i class="fa fa-cog" aria-hidden="true"></i> AKSI
-                                                </h1>
+                                                </h3>
                                             </center>
                                         </th>
+                                        <th style="width: 10%">
+                                            <h3 class="display-8">udah
+                                                dicetak?
+                                            </h3>
+                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,7 +41,7 @@
                                                     <i class="fa fa-hashtag" aria-hidden="true"></i>
                                                     {{ $user->nim }}</strong>
                                             </td>
-                                            <td style="width: 50%">
+                                            <td style="width: 40%">
                                                 <form action="{{ route('nilai.search') }}" method="GET" target="_blank">
                                                     <input type="hidden" name="cari" value="{{ $user->nim }}">
                                                     <input type="hidden" name="nama" value="{{ $user->nama }}">
@@ -45,20 +51,31 @@
                                                     </button>
                                                 </form>
                                             </td>
+                                            <td class="text-center" style="width: 10%">
+                                                @if ($user->is_printed == 0)
+                                                    <h3>
+                                                        <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
+                                                    </h3>
+                                                @elseif ($user->is_printed == 1)
+                                                    <h3>
+                                                        <i class="fa fa-check-circle text-success" aria-hidden="true"></i>
+                                                    </h3>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th style="width: 80%">
-                                            <h1 class="display-6"><i class="fa fa-user" aria-hidden="true"></i> Nama|NRP
-                                            </h1>
+                                            <h3 class="display-8"><i class="fa fa-user" aria-hidden="true"></i> Nama|NRP
+                                            </h3>
                                         </th>
                                         <th style="width: 20%">
                                             <center>
-                                                <h1 class="display-6">
+                                                <h3 class="display-8">
                                                     <i class="fa fa-cog" aria-hidden="true"></i> AKSI
-                                                </h1>
+                                                </h3>
                                             </center>
                                         </th>
                                     </tr>
@@ -91,5 +108,8 @@
                     .columns.adjust();
             });
         })
+        setTimeout(function() {
+            location.reload();
+        }, 600000); // 600000 milliseconds = 10 minutes
     </script>
 @endsection
