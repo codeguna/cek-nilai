@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function index()
     {
         $students = Student::groupBy('nama', 'nim','is_printed')->select('nim', 'nama','is_printed')->get();
-        $printed   = Student::select('is_printed','nama')->groupBy('nama')->where('is_printed', '=', 1)->count();
+        $printed   = Student::select('is_printed')->groupBy('is_printed')->where('is_printed', '=', 1)->count();
         return view('home', compact('students','printed'));
     }
     public function search(Request $request)
