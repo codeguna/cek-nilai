@@ -28,7 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         $students = Student::groupBy('nama', 'nim','is_printed')->select('nim', 'nama','is_printed')->get();
-        return view('home', compact('students'));
+        $printed   = Student::select('is_printed')->where('is_printed', '=', 1)->count();
+        return view('home', compact('students','printed'));
     }
     public function search(Request $request)
     {
@@ -45,7 +46,7 @@ class HomeController extends Controller
         $updateStudents = Student::where('nim', $cari)->update([
             'is_printed' => 1
         ]);
-
+        
         return view('student.result', compact('students', 'countMK', 'getIP'))->with('i');
     }
 }

@@ -8,7 +8,10 @@
                     <div class="card-header bg-info">
                         <h3 class="display-8"><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h3>
                     </div>
-
+                    <div class="alert alert-primary" role="alert">
+                       <h4><strong>Dicetak</strong></h4>  <br>
+                        <h5>{{ $printed }} / {{ $students->count() }}</h5>
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class=" table table-borderless table-hover datatable datatable-User">
