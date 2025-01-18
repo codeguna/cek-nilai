@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Models\Student;
+use App\Models\StudentPrint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\MockObject\Builder\Stub;
@@ -28,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $students = Student::groupBy('nama', 'nim','is_printed')->select('nim', 'nama','is_printed')->get();
-        $printed   = Student::select('is_printed','nim')->groupBy('nim')->where('is_printed', '=', 1)->count();
+        $printed = StudentPrint::where('is_printed', '=', 1)->count();
         return view('home', compact('students','printed'));
     }
     public function search(Request $request)
@@ -43,8 +44,10 @@ class HomeController extends Controller
 
         $updateStudents = Student::where('nim', '=', $cari)->first();
         // Assuming $cari is an array of 'nim' values
-        $updateStudents = Student::where('nim', $cari)->update([
-            'is_printed' => 1
+        $updateStudents = StudentPrint::where('nim', $updateStudents->nim)->create([
+            'is_printed' => 1,
+            'nim' => $updateStudents->nim,
+            'created_at' => now()
         ]);
         
         return view('student.result', compact('students', 'countMK', 'getIP'))->with('i');

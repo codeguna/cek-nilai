@@ -9,8 +9,9 @@
                         <h3 class="display-8"><i class="fa fa-search" aria-hidden="true"></i> List Nama Mahasiswa</h3>
                     </div>
                     <div class="alert alert-primary" role="alert">
-                       <h4><strong>Dicetak</strong></h4>  <br>
-                        <h5>{{ $printed }} / {{ $students->count() }}</h5>
+                        <h4><strong>Dicetak</strong></h4> <br>
+                        <h5>{{ $printed }} / {{ $students->count() }} <i class="fa fa-user" aria-hidden="true"></i>
+                            Orang</h5>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -55,13 +56,21 @@
                                                 </form>
                                             </td>
                                             <td class="text-center" style="width: 10%">
-                                                @if ($user->is_printed == 0)
-                                                    <h3>
-                                                        <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
-                                                    </h3>
-                                                @elseif ($user->is_printed == 1)
+                                                @php
+                                                    $check = App\Models\StudentPrint::where(
+                                                        'nim',
+                                                        '=',
+                                                        $user->nim,
+                                                    )->exists();
+                                                @endphp
+
+                                                @if ($check)
                                                     <h3>
                                                         <i class="fa fa-check-circle text-success" aria-hidden="true"></i>
+                                                    </h3>
+                                                @else
+                                                    <h3>
+                                                        <i class="fa fa-times-circle text-danger" aria-hidden="true"></i>
                                                     </h3>
                                                 @endif
                                             </td>

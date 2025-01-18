@@ -52,5 +52,10 @@ class Student extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan', 'kelas','is_printed'];
+	protected $fillable = ['nim', 'nama', 'tugasQuiz', 'uts', 'uas', 'nilai', 'nilaiAngka', 'nilaiHuruf', 'keterangan', 'namaMK', 'kehadiran', 'statusPembayaran', 'tunggakan', 'kelas', 'is_printed'];
+
+	public function printed()
+	{
+		return	$this->belongsTo(StudentPrint::class, 'nim');
+	}
 }
