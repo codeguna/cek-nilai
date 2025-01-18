@@ -42,15 +42,16 @@ class HomeController extends Controller
         $sumUTS     = Student::select('uts')->where('nama', '=', $getNama)->sum('uts');
         $getIP      = $sumUTS / $countMK;
 
-        $updateStudents = Student::where('nim', '=', $cari)->first();
-        $checkStudents = Student::where('nim', '=', $cari)->exists();
+        $updateStudent  = Student::where('nim', '=', $cari)->first();
+        $checkStudentExists  = Student::where('nim', '=', $cari)->exists();
 
-        // Assuming $cari is an array of 'nim' values
-        if (!$checkStudents) {
-            $updateStudents = StudentPrint::create([
+        // If student does not exist, create a record in StudentPrint
+        
+        if ($updateStudent) {
+            StudentPrint::create([
                 'is_printed' => 1,
-                'nim' => $updateStudents->nim,
-                'created_at' => now()
+                'nim' => $updateStudent->nim,
+                'created_at' => now(),
             ]);
         }
 
