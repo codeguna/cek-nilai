@@ -28,9 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $students = Student::groupBy('nama', 'nim','is_printed')->select('nim', 'nama','is_printed')->get();
+        $students = Student::groupBy('nama', 'nim', 'is_printed')->select('nim', 'nama', 'is_printed')->get();
         $printed = StudentPrint::where('is_printed', '=', 1)->count();
-        return view('home', compact('students','printed'));
+        return view('home', compact('students', 'printed'));
     }
     public function search(Request $request)
     {
@@ -43,13 +43,18 @@ class HomeController extends Controller
         $getIP      = $sumUTS / $countMK;
 
         $updateStudents = Student::where('nim', '=', $cari)->first();
+        $checkStudents = Student::where('nim', '=', $cari)->exists();
+
         // Assuming $cari is an array of 'nim' values
-        $updateStudents = StudentPrint::where('nim', $updateStudents->nim)->create([
-            'is_printed' => 1,
-            'nim' => $updateStudents->nim,
-            'created_at' => now()
-        ]);
-        
+        if (!$checkStudents) {
+            $updateStudents = StudentPrint::create([
+                'is_printed' => 1,
+                'nim' => $updateStudents->nim,
+                'created_at' => now()
+            ]);
+        }
+
+
         return view('student.result', compact('students', 'countMK', 'getIP'))->with('i');
     }
 }
